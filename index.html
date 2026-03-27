@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Política de Privacidad de Swipe Cleaner – aplicación de limpieza de archivos multimedia para Android." />
+  <title>Política de Privacidad – Swipe Cleaner</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:   #1A73E8;
+      --primary-dk:#1558B0;
+      --bg:        #F8F9FA;
+      --surface:   #FFFFFF;
+      --border:    #E0E0E0;
+      --text:      #202124;
+      --muted:     #5F6368;
+      --accent:    #34A853;
+      --warn:      #EA4335;
+      --radius:    10px;
+      --shadow:    0 2px 8px rgba(0,0,0,.08);
+      --max-w:     820px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dk) 100%);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    .header-icon {
+      width: 72px;
+      height: 72px;
+      background: rgba(255,255,255,.18);
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .header-icon svg { width: 40px; height: 40px; fill: #fff; }
+
+    header h1 {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -.5px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: .95rem;
+      opacity: .85;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 4px 14px;
+      background: rgba(255,255,255,.22);
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 20px;
+      font-size: .8rem;
+      letter-spacing: .3px;
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    .toc h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .toc ol {
+      padding-left: 20px;
+    }
+
+    .toc li { margin-bottom: 6px; }
+
+    .toc a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: .95rem;
+    }
+
+    .toc a:hover { text-decoration: underline; }
+
+    /* ── Sections ── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 28px 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--bg);
+    }
+
+    .section-num {
+      width: 34px;
+      height: 34px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .section h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .section p, .section li { font-size: .95rem; color: #3C3C3C; }
+
+    .section p + p { margin-top: 12px; }
+
+    .section ul, .section ol {
+      padding-left: 22px;
+      margin-top: 10px;
+    }
+
+    .section li { margin-bottom: 6px; }
+
+    /* ── Callout boxes ── */
+    .callout {
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: .92rem;
+      display: flex;
+      gap: 10px;
+    }
+
+    .callout-info  { background: #E8F0FE; border-left: 4px solid var(--primary); color: #1A1A5E; }
+    .callout-ok    { background: #E6F4EA; border-left: 4px solid var(--accent);  color: #1B3A1F; }
+    .callout-warn  { background: #FDE8E8; border-left: 4px solid var(--warn);   color: #6B1A1A; }
+
+    .callout .icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── Table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: .9rem;
+    }
+
+    .data-table th {
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .data-table th:first-child { border-radius: 6px 0 0 0; }
+    .data-table th:last-child  { border-radius: 0 6px 0 0; }
+
+    .data-table td {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .data-table tr:nth-child(even) td { background: var(--bg); }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* ── Tag chips ── */
+    .chip {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: .78rem;
+      font-weight: 600;
+      margin: 2px 2px 2px 0;
+    }
+    .chip-blue   { background: #D2E3FC; color: #1A56CE; }
+    .chip-green  { background: #CEEAD6; color: #1E6B2E; }
+    .chip-gray   { background: #EBEBEB; color: #555; }
+    .chip-red    { background: #FCE8E6; color: #B01010; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 28px 16px;
+      font-size: .82rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--primary); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .section { padding: 20px 16px 18px; }
+      .toc     { padding: 18px 16px; }
+      .data-table { display: block; overflow-x: auto; }
+    }
+
+    /* ── Smooth anchor offset ── */
+    [id] { scroll-margin-top: 16px; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header>
+  <div class="header-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14V4zM6 7v12a2 2 0 002 2h8a2 2 0 002-2V7H6zm8 7h-4v-2h4v2z"/>
+    </svg>
+  </div>
+  <h1>Política de Privacidad</h1>
+  <p>Swipe Cleaner &nbsp;·&nbsp; <code>com.smartcleaner.app</code></p>
+  <span class="badge">Última actualización: 27 de marzo de 2026</span>
+</header>
+
+<!-- ══════════════════ MAIN ══════════════════ -->
+<main>
+
+  <!-- Table of contents -->
+  <nav class="toc" aria-label="Tabla de contenido">
+    <h2>Contenido</h2>
+    <ol>
+      <li><a href="#sec1">Información que recopilamos</a></li>
+      <li><a href="#sec2">Cómo utilizamos la información</a></li>
+      <li><a href="#sec3">Uso de almacenamiento y permisos</a></li>
+      <li><a href="#sec4">Publicidad y servicios de terceros (AdMob)</a></li>
+      <li><a href="#sec5">Compartición de datos</a></li>
+      <li><a href="#sec6">Seguridad de los datos</a></li>
+      <li><a href="#sec7">Privacidad de menores</a></li>
+      <li><a href="#sec8">Derechos del usuario</a></li>
+      <li><a href="#sec9">Cambios a esta política</a></li>
+      <li><a href="#sec10">Contacto</a></li>
+    </ol>
+  </nav>
+
+  <!-- Intro callout -->
+  <div class="callout callout-info">
+    <span class="icon">ℹ️</span>
+    <p>
+      Al descargar y usar <strong>Swipe Cleaner</strong>, usted acepta las prácticas descritas en esta
+      Política de Privacidad. Si no está de acuerdo, por favor desinstale la aplicación.
+    </p>
+  </div>
+
+  <!-- ── 1. Información que recopilamos ── -->
+  <section class="section" id="sec1">
+    <div class="section-header">
+      <span class="section-num" aria-hidden="true">1</span>
+      <h2>Información que recopilamos</h2>
+    </div>
+
+    <p>
+      Swipe Cleaner está diseñado para operar con el <strong>mínimo de datos posibles</strong>.
+      A continuación se describe qué información se procesa y con qué propósito.
+    </p>
+
+    <table class="data-table" role="table" aria-label="Categorías de datos">
+      <thead>
+        <tr>
+          <th>Categoría</th>
+          <th>Datos específicos</th>
+          <th>Finalidad</th>
+          <th>¿Se envían a servidores?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="chip chip-blue">Archivos del dispositivo</span></td>
+          <td>Metadatos de imágenes y videos (nombre, tamaño, fecha)</td>
+          <td>Identificar y gestionar archivos innecesarios o grandes</td>
+          <td><span class="chip chip-green">No</span></td>
+        </tr>
+        <tr>
+          <td><span class="chip chip-blue">Información del dispositivo</span></td>
+          <td>Modelo del equipo, versión de Android, idioma del sistema</td>
+          <td>Garantizar compatibilidad y estabilidad de la app</td>
+          <td><span class="chip chip-green">No</span></td>
+        </tr>
+        <tr>
+          <td><span class="chip chip-blue">Datos de uso de la app</span></td>
+          <td>Acciones realizadas (eliminaciones, compresiones, navegación por gestos)</td>
+          <td>Mejorar la experiencia del usuario (solo procesamiento local)</td>
+          <td><span class="chip chip-green">No</span></td>
+        </tr>
+        <tr>
+          <td><span class="chip chip-gray">Datos publicitarios</span></td>
+          <td>Identificador de publicidad de Android (GAID), interacciones con anuncios</td>
+          <td>Servir anuncios relevantes a través de Google AdMob</td>
+          <td><span class="chip chip-red">Sí (Google AdMob)</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-ok" style="margin-top:16px;">
+      <span class="icon">✅</span>
+      <p>
+        <strong>No recopilamos</strong> información personal sensible como: nombre, dirección de correo
+        electrónico, número de teléfono, ubicación GPS, contactos, micrófono, cámara, datos biométricos
+        ni información financiera.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── 2. Cómo utilizamos la información ── -->
+  <section class="section" id="sec2">
+    <div class="section-header">
+      <span class="section-num" aria-hidden="true">2</span>
+      <h2>Cómo utilizamos la información</h2>
+    </div>
+
+    <p>La información procesada por Swipe Cleaner se utiliza exclusivamente para:</p>
+
+    <ul>
+      <li>
+        <strong>Funcionalidades principales de la app:</strong> escanear el dispositivo para
+        detectar imágenes y videos de gran tamaño o duplicados, facilitar su eliminación o
+        compresión, y gestionar la papelera interna.
+      </li>
+      <li>
+        <strong>Estadísticas de almacenamiento:</strong> mostrar al usuario información sobre
+        el espacio utilizado y liberado directamente en la pantalla de su dispositivo.
+      </li>
+      <li>
+        <strong>Mejora de la aplicación:</strong> analizar patrones de uso (de forma anónima y
+        local) para optimizar el rendimiento y la interfaz.
+      </li>
+      <li>
+        <strong>Publicidad:</strong> mostrar anuncios recompensados a través de Google AdMob.
+        Consulte la sección 4 para más detalles.
+      </li>
+    </ul>
+
+    <div class="callout callout-ok">
+      <span class="icon">✅</span>
+      <p>
+        Todo el procesamiento de archivos multimedia se realiza <strong>localmente en su
+        dispositivo</strong>. Ninguna imagen o video es enviado a nuestros servidores ni a
+        terceros.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── 3. Uso de almacenamiento y permisos ── -->
+  <section class="section" id="sec3">
+    <div class="section-header">
+      <span class="section-num" aria-hidden="true">3</span>
+      <h2>Uso de almacenamiento y permisos</h2>
+    </div>
+
+    <p>
+      Para cumplir con sus funciones, Swipe Cleaner solicita los siguientes permisos del sistema
+      Android. Estos permisos son solicitados en tiempo de ejecución (runtime permissions) y usted
+      puede revocarlos en cualquier momento desde los ajustes del sistema.
+    </p>
+
+    <table class="data-table" role="table" aria-label="Permisos de la aplicación">
+      <thead>
+        <tr>
+          <th>Permiso</th>
+          <th>Propósito</th>
+          <th>¿Obligatorio?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>READ_MEDIA_IMAGES</code></td>
+          <td>Leer imágenes del almacenamiento para mostrarlas, analizarlas y permitir su gestión.</td>
+          <td><span class="chip chip-red">Sí</span></td>
+        </tr>
+        <tr>
+          <td><code>READ_MEDIA_VIDEO</code></td>
+          <td>Leer videos del almacenamiento para mostrarlos, analizarlos y permitir su gestión.</td>
+          <td><span class="chip chip-red">Sí</span></td>
+        </tr>
+        <tr>
+          <td><code>WRITE_EXTERNAL_STORAGE</code> /<br><code>MANAGE_MEDIA</code></td>
+          <td>Mover archivos a la papelera interna de la app y eliminarlos de forma permanente cuando el usuario lo solicite.</td>
+          <td><span class="chip chip-red">Sí</span></td>
+        </tr>
+        <tr>
+          <td><code>INTERNET</code></td>
+          <td>Cargar anuncios de Google AdMob.</td>
+          <td><span class="chip chip-gray">Opcional*</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:10px;font-size:.85rem;color:var(--muted);">
+      * Opcional en el sentido de que la funcionalidad principal de limpieza opera sin conexión a
+      internet; sin embargo, los anuncios requieren conectividad.
+    </p>
+
+    <div class="callout callout-info" style="margin-top:16px;">
+      <span class="icon">🔒</span>
+      <div>
+        <p><strong>Control total del usuario:</strong></p>
+        <ul style="margin-top:6px;">
+          <li>Usted decide qué archivos eliminar. La app nunca elimina archivos de forma automática.</li>
+          <li>Los archivos eliminados se mueven primero a la papelera interna y pueden restaurarse antes de la eliminación permanente.</li>
+          <li>El acceso a archivos se limita estrictamente a imágenes y videos; no accedemos a documentos, contactos ni ningún otro tipo de archivo.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. Publicidad y servicios de terceros ── -->
+  <section class="section" id="sec4">
+    <div class="section-header">
+      <span class="section-num" aria-hidden="true">4</span>
+      <h2>Publicidad y servicios de terceros (AdMob)</h2>
+    </div>
+
+    <p>
+      Swipe Cleaner utiliza <strong>Google AdMob</strong> (un servicio de publicidad proporcionado
+      por Google LLC) para mostrar anuncios recompensados dentro de la aplicación. AdMob puede
+      recopilar cierta información con el fin de personalizar y optimizar la entrega de anuncios.
+    </p>
+
+    <p>Los datos que AdMob puede recopilar incluyen, entre otros:</p>
+
+    <ul>
+      <li>Identificador de publicidad de Android (Google Advertising ID / GAID)</li>
+      <li>Dirección IP (para determinación aproximada de región geográfica)</li>
+      <li>Información sobre las interacciones con los anuncios (clics, visualizaciones)</li>
+      <li>Datos del dispositivo (modelo, versión de Android, idioma)</li>
+    </ul>
+
+    <div class="callout callout-warn">
+      <span class="icon">⚠️</span>
+      <p>
+        El uso de datos por parte de Google AdMob se rige por la
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+          Política de Privacidad de Google
+        </a>.
+        Le recomendamos leerla para entender cómo Google procesa sus datos.
+      </p>
+    </div>
+
+    <p>
+      Usted puede limitar la publicidad personalizada desde la configuración de su dispositivo
+      Android en: <strong>Ajustes → Google → Anuncios → Inhabilitar la personalización de anuncios</strong>.
+      También puede restablecer su Identificador de publicidad desde ese mismo menú.
+    </p>
+
+    <p>
+      Para más información sobre las prácticas publicitarias de Google, visite:
+      <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">
+        https://policies.google.com/technologies/ads
+      </a>
+    </p>
+  </section>
+
+  <!-- ── 5. Compartición de datos ── -->
+  <section class="section" id="sec5">
+    <div class="section-header">
+      <span class="section-num" aria-hidden="true">5</span>
+      <h2>Compartición de datos</h2>
+    </div>
+
+    <p>
+      <strong>No vendemos, alquilamos ni compartimos</strong> su información personal con terceros,
+      salvo en los casos limitados que se describen a continuación:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Google AdMob:</strong> como se detalla en la sección 4, AdMob recibe datos técnicos
+        y de publicidad para la entrega de anuncios.
+      </li>
+      <li>
+        <strong>Obligaciones legales:</strong> podríamos divulgar información cuando así lo exija
+        la ley mexicana o una orden judicial válida.
+      </li>
+      <li>
+        <strong>Protección de derechos:</strong> en caso necesario para proteger los derechos,
+        la propiedad o la seguridad de SpeedSoft, nuestros usuarios u otras personas.
+      </li>
+    </ul>
+
+    <div class="callout callout-ok">
+      <span class="icon">✅</span>
+      <p>
+        Sus archivos multimedia (imágenes y videos) <strong>nunca</strong> se comparten con
+        ningún tercero bajo ninguna circunstancia. Todo el procesamiento de archivos es
+        estrictamente local.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── 6. Seguridad de los datos ── -->
+  <section class="section" id="sec6">
+    <div class="section-header">
+      <span class="section-num" aria-hidden="true">6</span>
+      <h2>Seguridad de los datos</h2>
+    </div>
+
+    <p>
+      Tomamos medidas técnicas y organizativas razonables para proteger la información procesada
+      por Swipe Cleaner:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Procesamiento local:</strong> dado que los archivos no salen de su dispositivo,
+        se elimina el riesgo de interceptación durante la transmisión.
+      </li>
+      <li>
+        <strong>Acceso restringido:</strong> la app solo accede a los archivos multimedia
+        explícitamente permitidos por el sistema Android a través de los permisos concedidos.
+      </li>
+      <li>
+        <strong>Papelera segura:</strong> los archivos movidos a la papelera interna de la app
+        solo son accesibles desde la propia aplicación hasta su eliminación permanente.
+      </li>
+      <li>
+        <strong>Sin almacenamiento en la nube:</strong> no utilizamos servicios de almacenamiento
+        en la nube para guardar sus archivos ni datos personales.
+      </li>
+    </ul>
+
+    <p>
+      No obstante, ningún método de almacenamiento electrónico es 100% seguro. Si tiene razones
+      para creer que su interacción con la aplicación ya no es segura, por favor contáctenos
+      de inmediato.
+    </p>
+  </section>
+
+  <!-- ── 7. Privacidad de menores ── -->
+  <section class="section" id="sec7">
+    <div class="section-header">
+      <span class="section-num" aria-hidden="true">7</span>
+      <h2>Privacidad de menores</h2>
+    </div>
+
+    <p>
+      Swipe Cleaner está disponible para el público en general, incluidos menores de 13 años.
+      Cumplimos con las disposiciones aplicables en materia de protección de la privacidad infantil,
+      incluyendo:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Datos mínimos:</strong> no recopilamos información personal identificable de
+        ningún usuario, independientemente de su edad.
+      </li>
+      <li>
+        <strong>Sin registro de cuenta:</strong> la aplicación no requiere la creación de una
+        cuenta de usuario, por lo que no se solicitan ni almacenan datos personales como nombre,
+        edad o correo electrónico.
+      </li>
+      <li>
+        <strong>Publicidad:</strong> Google AdMob aplica sus propias políticas para el tratamiento
+        de datos de usuarios menores de edad y usuarios no identificados. Puede consultar las
+        <a href="https://support.google.com/admob/answer/9655791" target="_blank" rel="noopener noreferrer">
+          Políticas de AdMob sobre familias y anuncios
+        </a>.
+      </li>
+    </ul>
+
+    <div class="callout callout-warn">
+      <span class="icon">⚠️</span>
+      <p>
+        Si usted es padre, madre o tutor y tiene conocimiento de que un menor a su cargo ha
+        proporcionado información personal a través de nuestra aplicación sin su consentimiento,
+        contáctenos a través de los datos indicados en la sección 10 para que podamos tomar las
+        medidas correspondientes.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── 8. Derechos del usuario ── -->
+  <section class="section" id="sec8">
+    <div class="section-header">
+      <span class="section-num" aria-hidden="true">8</span>
+      <h2>Derechos del usuario</h2>
+    </div>
+
+    <p>
+      Usted tiene control total sobre la información relacionada con el uso de Swipe Cleaner.
+      En particular, le corresponden los siguientes derechos:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Acceso y control de archivos:</strong> en todo momento usted decide qué archivos
+        analizar, cuáles eliminar y cuáles restaurar desde la papelera interna.
+      </li>
+      <li>
+        <strong>Revocación de permisos:</strong> puede revocar los permisos de almacenamiento
+        concedidos a la app en cualquier momento desde: <em>Ajustes del dispositivo → Aplicaciones
+        → Swipe Cleaner → Permisos</em>. Al revocar los permisos, la funcionalidad principal de
+        la app quedará inaccesible.
+      </li>
+      <li>
+        <strong>Optar por no recibir publicidad personalizada:</strong> puede inhabilitar la
+        publicidad personalizada de AdMob siguiendo las instrucciones descritas en la sección 4.
+      </li>
+      <li>
+        <strong>Desinstalación:</strong> al desinstalar la aplicación, toda la información
+        almacenada localmente por la app (incluida la papelera interna) se eliminará del
+        dispositivo.
+      </li>
+      <li>
+        <strong>Solicitud de información:</strong> si desea conocer qué datos procesa la app o
+        solicitar la eliminación de cualquier información relacionada con usted, puede contactarnos
+        mediante los datos de la sección 10.
+      </li>
+    </ul>
+  </section>
+
+  <!-- ── 9. Cambios a esta política ── -->
+  <section class="section" id="sec9">
+    <div class="section-header">
+      <span class="section-num" aria-hidden="true">9</span>
+      <h2>Cambios a esta política</h2>
+    </div>
+
+    <p>
+      Podemos actualizar esta Política de Privacidad periódicamente para reflejar cambios en
+      nuestras prácticas, en la aplicación o en los requisitos legales aplicables. Cuando
+      realicemos cambios materiales:
+    </p>
+
+    <ul>
+      <li>Actualizaremos la fecha de "Última actualización" al inicio de esta página.</li>
+      <li>
+        Publicaremos un aviso dentro de la aplicación para informarle sobre cambios
+        significativos.
+      </li>
+    </ul>
+
+    <p>
+      Le recomendamos revisar esta política periódicamente. El uso continuado de Swipe Cleaner
+      después de que los cambios entren en vigor constituirá su aceptación de la política
+      actualizada.
+    </p>
+
+    <div class="callout callout-info">
+      <span class="icon">📅</span>
+      <p>
+        La versión actual de esta Política de Privacidad fue publicada el
+        <strong>27 de marzo de 2026</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── 10. Contacto ── -->
+  <section class="section" id="sec10">
+    <div class="section-header">
+      <span class="section-num" aria-hidden="true">10</span>
+      <h2>Contacto</h2>
+    </div>
+
+    <p>
+      Si tiene preguntas, comentarios o solicitudes relacionadas con esta Política de Privacidad
+      o con el tratamiento de sus datos, puede contactarnos:
+    </p>
+
+    <ul>
+      <li><strong>Desarrollador:</strong> SpeedSoft</li>
+      <li><strong>País:</strong> México</li>
+      <li>
+        <strong>Correo electrónico:</strong>
+        <a href="mailto:privacy@speedsoft.mx">privacy@speedsoft.mx</a>
+      </li>
+      <li>
+        <strong>Repositorio / página oficial de la política:</strong>
+        <a href="https://speedsoft.github.io/Swipe-Cleaner_Policy/" target="_blank" rel="noopener noreferrer">
+          https://speedsoft.github.io/Swipe-Cleaner_Policy/
+        </a>
+      </li>
+    </ul>
+
+    <p style="margin-top:14px;">
+      Nos comprometemos a responder su solicitud dentro de un plazo razonable, que no excederá
+      los <strong>30 días hábiles</strong>.
+    </p>
+  </section>
+
+</main>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer>
+  <p>
+    &copy; 2026 <strong>SpeedSoft</strong> · Swipe Cleaner (<code>com.smartcleaner.app</code>)
+  </p>
+  <p style="margin-top:6px;">
+    Esta política se rige por las leyes aplicables de los <strong>Estados Unidos Mexicanos</strong>
+    y cumple con las
+    <a href="https://play.google.com/about/developer-content-policy/" target="_blank" rel="noopener noreferrer">
+      Políticas para Desarrolladores de Google Play
+    </a>.
+  </p>
+</footer>
+
+</body>
+</html>
